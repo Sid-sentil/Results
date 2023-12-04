@@ -1,15 +1,22 @@
 
+h1{
+    color: hsl(221, 100%, 96%);
+}
 
-
+h3 {
+    padding-top: 50px;
+    font-weight: 800;
+    font-size: 25px;
+}
 
   .score {
-    margin: 15px 0;
+    margin: 90px 0;
     position: relative; /* Ensure the text is on top of the circle */
     z-index: 1; /* Place the text on top of the circle */
-    font-size: 75px; /* Adjust the font size as needed */
+    font-size: 100px; /* Adjust the font size as needed */
     display: block;
-    margin-bottom: -45px; /* Adjust spacing between the score and subtext */
-  
+    margin-bottom: -25px; /* Adjust spacing between the score and subtext */
+    font-weight: 700;
   }
 
   .score-container {
@@ -17,7 +24,10 @@
   }
 
   .score-container sub {
-   
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%); /* Center the subtext horizontally */
+    left: 50%;
     font-size: 13px; /* Adjust the font size of the subtext */
   }
 
@@ -30,12 +40,13 @@ body {
 
 
 .container {
+    display: inline-block;
     position: absolute;
     border-radius: 20px;
     max-width: 375px; /* Adjust as needed for your design */
     top: 25%;
     left: 25%;
-    padding: 20px;
+    padding: 9px;
     background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
     color: #fff;
     text-align: center;
@@ -45,34 +56,52 @@ body {
     
   }
 
+  .text{
+    padding-left: 70px;
+    padding-right: 70px;
+    text-align: center;
+  }
+
+
   .container::before {
     content: '';
     display: block;
-    width: 150px; /* Adjust the width of the circle */
-    height: 150px; /* Adjust the height of the circle */
+    width: 200px; /* Adjust the width of the circle */
+    height: 200px; /* Adjust the height of the circle */
     border-radius: 50%; /* Creates a circular shape */
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1; /* Ensure the circle is behind the text */
-    background: linear-gradient(to bottom, hsl(241, 81%, 54%), hsl(252, 100%, 67%)); }
+    background: linear-gradient(to top, hsl(252, 100%, 67%), hsl(249, 95%, 61%), hsl(241, 81%, 54%)); }
 
 .leftcontainer
 {
-    position: relative;
+    display: inline-block;
+    position: absolute;
     top: 25%;
     right: 25%;
     border-radius: 15px;
     max-width: 375px; /* Adjust as needed for your design */
-    padding: 20px;
+    padding: 50px;
     background: #fff;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     margin-left: auto; /* Set left margin to auto */
     margin-right: 0; /* Set right margin to 0 */
     text-align: left;
+    z-index: -2;
 }
-/* Define colors */
+
+.reaction{
+    padding: 10px;
+    padding-right: 100px;
+    color: hsl(0, 100%, 67%);
+    font-weight: 700;
+    background-color: hsl(0, 49%, 89%);
+    border-radius: 10px;
+}
+
 .primary-light-red {
     color: hsl(0, 100%, 67%);
 }
