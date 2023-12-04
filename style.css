@@ -1,155 +1,225 @@
+ @font-face {
+    font-family: 'HankenGrotesk';
+    font-display: swap;
+    font-weight: 100 900;
+    src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf')
+         format('truetype');
+ }
 
-h1{
-    color: hsl(221, 100%, 96%);
+
+:root{
+    --font-familt-default: 'HankenGrotesk', sans-serif;
+
+
+    --fs-400: 1.125rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 1.75rem;
+    --fs-800: 2rem;
+    --fs-900: 5rem;
+
+
+    --fw-refgular: 500;
+    --fw-bold: 700;
+    --fw-black: 800;
+
+    --clr-primary-hsl-400: 252, 100%, 67%;
+    --clr-primary-hsl-500: 256, 72%, 46%;
+    --clr-secondary-hsl-400: 241, 81%, 54%;
+    --clr-secondary-hsl-500: 241, 72%, 46%;
+  
+    --clr-neutral-hsl-100: 0, 0%, 100%;
+    --clr-neutral-hsl-200: 221, 100%, 96%;
+    --clr-neutral-hsl-300: 241, 100%, 89%;
+    --clr-neutral-hsl-700: 224, 30%, 27%;
+  
+    --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+    --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
+    --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+    --clr-neutral-700: hsl(var(--clr-neutral-hsl-700));
+  
+  
+    --clr-primary-400: hsl(var(--clr-primary-hsl-400));
+    --clr-primary-500: hsla(var(--clr-primary-hsl-500));
+    --clr-secondary-400: hsl(var(--clr-secondary-hsl-400));
+  
+    --gradient-primary: linear-gradient(
+        var(--clr-primary-400), 
+        var(--clr-secondary-400));
+  
+    --gradient-to-transparent: linear-gradient(
+        var(--clr-primary-500),
+        hsl(var(--clr-secondary-hsl-500), 0));
+  
+    --clr-accent-1: 0, 100%, 67%;
+    --clr-accent-2: 39, 100%, 56%;
+    --clr-accent-3: 166, 100%, 37%;
+    --clr-accent-4: 234, 85%, 45%;
+  
 }
 
-h3 {
-    padding-top: 50px;
-    font-weight: 800;
-    font-size: 25px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-  .score {
-    margin: 90px 0;
-    position: relative; /* Ensure the text is on top of the circle */
-    z-index: 1; /* Place the text on top of the circle */
-    font-size: 100px; /* Adjust the font size as needed */
-    display: block;
-    margin-bottom: -25px; /* Adjust spacing between the score and subtext */
-    font-weight: 700;
-  }
-
-  .score-container {
-    position: relative;
-  }
-
-  .score-container sub {
-    position: absolute;
-    bottom: 0;
-    transform: translateX(-50%); /* Center the subtext horizontally */
-    left: 50%;
-    font-size: 13px; /* Adjust the font size of the subtext */
-  }
-
-body {
-    font-family: 'Hanken Grotesk', sans-serif;
-    line-height: 1.6;
-    color: hsl(224, 30%, 27%);
-    background-color: hsl(0, 0%, 100%);
+* {
+  margin: 0;
+  font: inherit;
 }
 
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
 
-.container {
-    display: inline-block;
-    position: absolute;
-    border-radius: 20px;
-    max-width: 375px; /* Adjust as needed for your design */
-    top: 25%;
-    left: 25%;
-    padding: 9px;
-    background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
-    color: #fff;
+body{
+    font-family: var(--font-familt-default);
+    font-size: var(--fs-400);
+    color: var(--clr-neutral-700);
+}
+
+@media (min-width: 600px) {
+    body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+}
+
+.flex-group {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    flex-wrap: wrap;
+  }
+
+.grid-flow {
+    display: grid;
+    align-content: start;
+    gap: 1rem;
+}
+
+.grid-flow[data-spacing="large"] {
+    gap: 2rem;
+}
+
+.section-title {
+font-weight: var(--fw-bold);
+font-size: var(--fs-600);
+}
+
+.button {
+    color: var(--clr-neutral-100);
+    line-height: 1;
+    background: var(--clr-neutral-700);
+    padding: 1rem 2rem;
+    border: 0;
+    border-radius: 100vw;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:focus-visible {
+    background: var(--gradient-primary);
+}
+
+.result-summary {
+    --padding: 2.5rem;
+    --border-radius: 2rem;
+    max-width: 46rem;
+    display: grid;
+}
+
+@media (min-width: 600px) {
+    .result-summary {
+        margin-inline: 1rem;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 2rem;
+        overflow: hidden;
+        box-shadow: .5rem 1rem 3rem
+          hsl(var(--clr-neutral-hsl-700), .2);
+    }
+}
+
+.results,
+.summary {
+    padding:var(--padding);
+}
+
+.results {
+    color: hsl(var(--clr-neutral-hsl-100), .7);
     text-align: center;
-    z-index: -1;
-    margin-left: 0; /* Set left margin to 0 */
-    margin-right: auto; /* Set right margin to auto */
-    
-  }
+    padding: 
+    var(--padding) calc(var(--padding) * 1.5);
+    background: var(--gradient-primary);
+    border-radius:
+    0 0 var(--border-radius) var(--border-radius);
+}
 
-  .text{
-    padding-left: 70px;
-    padding-right: 70px;
-    text-align: center;
-  }
+@media (min-width: 600px) {
+    .results {
+        border-radius: var(--border-radius);
+    }
+}
 
+.result-score {
+    display: grid;
+    place-content: center;
+    width: 12rem;
+    margin-inline: auto;
+    background: var(--gradient-to-transparent);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
 
-  .container::before {
-    content: '';
+.result-score span {
     display: block;
-    width: 200px; /* Adjust the width of the circle */
-    height: 200px; /* Adjust the height of the circle */
-    border-radius: 50%; /* Creates a circular shape */
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1; /* Ensure the circle is behind the text */
-    background: linear-gradient(to top, hsl(252, 100%, 67%), hsl(249, 95%, 61%), hsl(241, 81%, 54%)); }
+    font-size: var(--fs-900);
+    font-weight: var(--fw-black);
+    line-height: 1;
+    color: var(--clr-neutral-100);
 
-.leftcontainer
-{
-    display: inline-block;
-    position: absolute;
-    top: 25%;
-    right: 25%;
-    border-radius: 15px;
-    max-width: 375px; /* Adjust as needed for your design */
-    padding: 50px;
-    background: #fff;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    margin-left: auto; /* Set left margin to auto */
-    margin-right: 0; /* Set right margin to 0 */
-    text-align: left;
-    z-index: -2;
 }
 
-.reaction{
-    padding: 10px;
-    padding-right: 100px;
-    color: hsl(0, 100%, 67%);
-    font-weight: 700;
-    background-color: hsl(0, 49%, 89%);
-    border-radius: 10px;
+.result-rank {
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-700);
+    font-weight: var(--fw-bold);
 }
 
-.primary-light-red {
-    color: hsl(0, 100%, 67%);
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: hsl(var(--item-color), .1);
 }
 
-.primary-orangey-yellow {
-    color: hsl(39, 100%, 56%);
+.summary-item svg {
+    stroke:hsl(var(--item-color));
 }
 
-.primary-green-teal {
-    color: hsl(166, 100%, 37%);
+.summary-item-title {
+    color: hsl(var(--item-color));
+    font-weight: var(--fw-bold);
 }
 
-.primary-cobalt-blue {
-    color: hsl(234, 85%, 45%);
+.summary-item[data-item-type="accent-1"] {
+    --item-color: var(--clr-accent-1);
 }
 
-.neutral-white {
-    color: hsl(0, 0%, 100%);
+.summary-item[data-item-type="accent-2"] {
+    --item-color: var(--clr-accent-2);
 }
 
-.neutral-pale-blue {
-    color: hsl(221, 100%, 96%);
+.summary-item[data-item-type="accent-3"] {
+    --item-color: var(--clr-accent-3);
 }
 
-.neutral-light-lavender {
-    color: hsl(241, 100%, 89%);
+.summary-item[data-item-type="accent-4"] {
+    --item-color: var(--clr-accent-4);
 }
-
-.neutral-dark-gray-blue {
-    color: hsl(224, 30%, 27%);
-}
-
-/* Define gradients */
-.background-light-slate-blue {
-    background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
-}
-
-.background-light-royal-blue {
-    background: linear-gradient(to bottom, hsl(241, 81%, 54%), hsl(252, 100%, 67%));
-}
-
-/* Mobile styles */
-@media (max-width: 375px) {
-    /* Add mobile-specific styles */
-}
-
-/* Desktop styles */
-@media (min-width: 376px) {
-    /* Add desktop-specific styles */
-}
-
