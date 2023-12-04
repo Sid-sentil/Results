@@ -1,0 +1,126 @@
+
+
+
+
+  .score {
+    margin: 15px 0;
+    position: relative; /* Ensure the text is on top of the circle */
+    z-index: 1; /* Place the text on top of the circle */
+    font-size: 75px; /* Adjust the font size as needed */
+    display: block;
+    margin-bottom: -45px; /* Adjust spacing between the score and subtext */
+  
+  }
+
+  .score-container {
+    position: relative;
+  }
+
+  .score-container sub {
+   
+    font-size: 13px; /* Adjust the font size of the subtext */
+  }
+
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    line-height: 1.6;
+    color: hsl(224, 30%, 27%);
+    background-color: hsl(0, 0%, 100%);
+}
+
+
+.container {
+    position: absolute;
+    border-radius: 20px;
+    max-width: 375px; /* Adjust as needed for your design */
+    top: 25%;
+    left: 25%;
+    padding: 20px;
+    background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    color: #fff;
+    text-align: center;
+    z-index: -1;
+    margin-left: 0; /* Set left margin to 0 */
+    margin-right: auto; /* Set right margin to auto */
+    
+  }
+
+  .container::before {
+    content: '';
+    display: block;
+    width: 150px; /* Adjust the width of the circle */
+    height: 150px; /* Adjust the height of the circle */
+    border-radius: 50%; /* Creates a circular shape */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Ensure the circle is behind the text */
+    background: linear-gradient(to bottom, hsl(241, 81%, 54%), hsl(252, 100%, 67%)); }
+
+.leftcontainer
+{
+    position: relative;
+    top: 25%;
+    right: 25%;
+    border-radius: 15px;
+    max-width: 375px; /* Adjust as needed for your design */
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin-left: auto; /* Set left margin to auto */
+    margin-right: 0; /* Set right margin to 0 */
+    text-align: left;
+}
+/* Define colors */
+.primary-light-red {
+    color: hsl(0, 100%, 67%);
+}
+
+.primary-orangey-yellow {
+    color: hsl(39, 100%, 56%);
+}
+
+.primary-green-teal {
+    color: hsl(166, 100%, 37%);
+}
+
+.primary-cobalt-blue {
+    color: hsl(234, 85%, 45%);
+}
+
+.neutral-white {
+    color: hsl(0, 0%, 100%);
+}
+
+.neutral-pale-blue {
+    color: hsl(221, 100%, 96%);
+}
+
+.neutral-light-lavender {
+    color: hsl(241, 100%, 89%);
+}
+
+.neutral-dark-gray-blue {
+    color: hsl(224, 30%, 27%);
+}
+
+/* Define gradients */
+.background-light-slate-blue {
+    background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+.background-light-royal-blue {
+    background: linear-gradient(to bottom, hsl(241, 81%, 54%), hsl(252, 100%, 67%));
+}
+
+/* Mobile styles */
+@media (max-width: 375px) {
+    /* Add mobile-specific styles */
+}
+
+/* Desktop styles */
+@media (min-width: 376px) {
+    /* Add desktop-specific styles */
+}
+
